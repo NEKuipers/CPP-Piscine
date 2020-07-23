@@ -1,23 +1,24 @@
 NAME = 		megaphone
 SRCS = 		megaphone.cpp
-OBJECTS = 	$(SRCS:.cpp=.o)
+OBJ = 	megaphone.o
 FLAGS = 	-Wall -Werror -Wextra
-
-all :$(NAME)
 
 #colors
 GREEN	= \x1b[32;01m
 WHITE	= \x1b[29;01m
 RESET	= \x1b[0m
 
-$(NAME): $(OBJECTS) 
+all :$(NAME)
 
-%.o: %.s
+%.o: %.c
 	@echo "$(WHITE)Compiling: $<"
-	@clang++ $< $@ $(FLAGS)
+	@clang++ $(FLAGS) -o $@ -c $<
+
+$(NAME): $(OBJ)
+	clang++ -o $(NAME) $(OBJ)
 
 clean:
-	@rm -f $(OBJECTS)
+	@rm -f $(OBJ)
 
 fclean:	clean
 	@rm -f $(NAME)
