@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   ex04.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/30 11:19:45 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/02 12:58:08 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/02 13:09:00 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/02 13:12:41 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include <iostream>
 
+void		brain(void)
+{
+	std::string brain = "HI THIS IS BRAIN";
+	std::string	*pointer = &brain;
+	std::string &ref = brain;
 
-
-void	ztest() {
-	int n = 10;
-	ZombieHorde Uno = ZombieHorde(n);
-	Uno.announce();
+	std::cout << "Normal string : " << brain << std::endl;
+	std::cout << "Pointer to string : " << *pointer << std::endl;
+	std::cout << "Reference to string : " << brain << std::endl;
 }
 
-int		main() {
-	ztest();
+int			main(void)
+{
+	brain();
 	return (0);
 }

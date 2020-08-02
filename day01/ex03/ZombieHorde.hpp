@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 13:18:03 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/07/30 13:42:36 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/02 12:19:07 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class ZombieHorde
 		ZombieHorde(int n);
 		~ZombieHorde();
 		std::string	randomChump();
-		void		announce(int n);
+		void		announce(void);
 	private:
 		Zombie *zombie;
+	    int		amount;
 };
 
 
