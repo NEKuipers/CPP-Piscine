@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 08:52:25 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/07/29 15:20:09 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/07/29 16:52:14 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,7 +193,7 @@ int         main(void)
     Contact     contacts[8];
     int         noc;
 
-    std::cout << "Welcome to your very own 'Crappy Awesome Phonebook'." << std::endl;
+    std::cout << "Welcome to your very own ~Crappy Awesome Phonebook~." << std::endl;
 
     noc = 0;
     std::string command = "";
@@ -203,7 +203,7 @@ int         main(void)
         std::cout << "What do you want to do? >";
         std::string command = "";
         std::getline(std::cin, command);
-        if (!std::cin.good())
+        if (!std::cin.good() || command.compare("EXIT") == 0)
             exit(0);
         if (command.compare("ADD") == 0)
             add_contact(contacts, &noc);
