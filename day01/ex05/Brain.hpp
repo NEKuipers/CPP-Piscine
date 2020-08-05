@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/02 13:14:46 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/02 13:31:47 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/05 16:01:07 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ class Brain
 	public:
 		Brain();
 		~Brain();
-		void	setWeight(int weight);
-		std::string	identify();
+		const Brain	*identify() const;
 	private:
-		int weight;
 
 };
 

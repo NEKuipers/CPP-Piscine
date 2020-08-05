@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 08:52:25 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/07/29 16:52:14 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/05 12:40:20 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,34 @@ std::string Contact::getfield(int i)
 
 int         search_contact(Contact *contacts, int *noc)
 {
-    int index;
-    std::cout << "Enter the index number of the contact you want to look up: ";
-    std::cin >> index;
-    std::cout << std::endl; 
-    if (index >= 0 && index < *noc && std::cin.good())
-        for (int i = 1; i < 12; i++)
-            std::cout << contacts[index].getfield(i) << std::endl;
-    else
+    int index = -1;
+    std::string command = "";
+    while (command.compare("EXIT") != 0)
     {
-        std::cin.clear();
-        std::cout << "Sorry, that index number does not correspond to an existing contact." << std::endl;
+        std::cout << "Enter the index number of the contact you want to look up: ";
+        std::getline(std::cin, command);
+        index = command[0] - '0';
+        if (command.length() == 1 && index >= 0 && index < *noc && std::cin.good())
+        {
+            for (int i = 1; i < 12; i++)
+                std::cout << contacts[index].getfield(i) << std::endl;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            return (0);
+        }
+        else
+        {
+            if (command.compare("EXIT") == 0)
+            {
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                return (0);
+            }
+            std::cin.clear();
+            if (command.length() != 1)
+                std::cout << "Please enter a single digit." << std::endl;
+            else
+                std::cout << "Sorry, that index number does not correspond to an existing contact." << std::endl;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     return (0);
@@ -203,8 +220,13 @@ int         main(void)
         std::cout << "What do you want to do? >";
         std::string command = "";
         std::getline(std::cin, command);
-        if (!std::cin.good() || command.compare("EXIT") == 0)
+        if (!std::cin.good())
             exit(0);
+        if (command.compare("EXIT") == 0)
+        {
+            std::cout << "Goodbye!" << std::endl;
+            return (0);
+        }
         if (command.compare("ADD") == 0)
             add_contact(contacts, &noc);
         else if (command.compare("SEARCH") == 0)
@@ -223,3 +245,4 @@ int         main(void)
     std::cout << "Goodbye!" << std::endl;
     return (0);
 }
+

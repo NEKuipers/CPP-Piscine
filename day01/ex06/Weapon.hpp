@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Brain.cpp                                          :+:    :+:            */
+/*   Weapon.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/05 15:50:37 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/05 16:01:03 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/05 16:13:08 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/05 16:36:20 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-Brain::Brain() {
-	return;
-}
-
-const Brain    *Brain::identify() const
+class Weapon
 {
-    return (this);
-}
+	public:
+		Weapon();
+		~Weapon();
+};
 
-Brain::~Brain() {
-	return;
-}
+#endif
