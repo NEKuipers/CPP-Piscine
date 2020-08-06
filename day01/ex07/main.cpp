@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 17:09:17 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/05 17:12:18 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/06 11:33:32 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,36 +19,34 @@ int		main(int ac, char **av)
 	if (ac != 4)
 	{
 		std::cout << "Incorrect amount of arguments." << std::endl;
-		return (0);
+		std::cout << "Correct entry: ./replace <text file> " <<
+			"'string one' 'string two'." << std::endl;
+		return (1);
 	}
-	std::ifstream	r;
-	std::ofstream	w;
 	std::string 	buffer;
 	std::string 	file = av[1];
+	std::string		output = file + ".replace";
 	std::string 	s1 = av[2];
 	std::string 	s2 = av[3];
-	r.open(av[1]);
-	if (r.fail())
+	std::ifstream	ifs(file);
+	if (ifs.fail())
 	{
 		std::cout << "File could not be opened." << std::endl;
 		return (-1);
 	}
-	w.open(file.append(".replace"));
-	if (w.fail())
+	std::ofstream 	ofs(output);
+	if (ofs.fail())
 	{
 		std::cout << "Could not create new file."<< std::endl;
 		return (-1);
 	}
-	while (std::getline(r, buffer))
+	while (std::getline(ifs, buffer))
 	{
-		if (buffer.find(s1) < buffer.length())
+		while (buffer.find(s1) != std::string::npos)
 			buffer.replace(buffer.find(s1), s1.length(), s2);
-		if (r.eof())
-			w << buffer;
-		else
-			w << buffer << std::endl;
+		(ifs.eof()) ? ofs << buffer : ofs << buffer << std::endl;
 	}
-	r.close();
-	w.close();
+	ifs.close();
+	ofs.close();
 	return (0);
 }

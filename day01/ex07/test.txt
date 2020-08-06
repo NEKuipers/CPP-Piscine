@@ -1,0 +1,11 @@
+This is a test file used to test the replace program.
+
+The program should replace every occurrence of the word test. 
+
+If the following word is no longer test...
+
+the test has worked.
+
+tes
+t 
+te st testtest

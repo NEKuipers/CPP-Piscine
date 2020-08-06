@@ -6,7 +6,7 @@
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/29 16:01:34 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/07/30 11:23:35 by nkuipers      ########   odam.nl          #
+#    Updated: 2020/08/06 11:38:58 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,12 @@ RESET	= \x1b[0m
 all: $(NAME)
 
 $(NAME):
-	$(CXX) $(FILES) $(FLAGS) -o $(NAME)
-	@echo "$(GREEN)Done!"
+	@$(CXX) $(FILES) $(FLAGS) -o $(NAME)
+	@echo "$(GREEN)Done! Title of output file is '$(NAME)'" 
 
 clean:
-	rm -f $(NAME)
+	@echo "$(WHITE) Cleaning..."
+	@rm -f $(NAME)
 
 fclean: clean
 
