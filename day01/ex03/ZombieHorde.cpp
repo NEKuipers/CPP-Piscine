@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 13:18:01 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/02 12:56:40 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/06 13:40:08 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ std::string	ZombieHorde::randomChump(void) {
 	std::string names[] = {"Barry", "Roger", "Jon", "Walter", "Rick", "Big Dave", "Peanut", "Eddie", "Noodle", "Clement"};
 
 	int n = rand() % 10;
-	std::cout << n << std::endl;
 	return (names[n]);
 }
 

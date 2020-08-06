@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/02 13:09:00 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/02 13:12:41 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/06 13:40:15 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		brain(void)
 
 	std::cout << "Normal string : " << brain << std::endl;
 	std::cout << "Pointer to string : " << *pointer << std::endl;
-	std::cout << "Reference to string : " << brain << std::endl;
+	std::cout << "Reference to string : " << ref << std::endl;
 }
 
 int			main(void)

@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 11:19:54 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/07/30 13:01:44 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/06 13:39:19 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Zombie		*ZombieEvent::newZombie(std::string name) {
 Zombie		*ZombieEvent::randomChump(void) {
 	std::string names[] = {"Barry", "Roger", "Jon", "Walter", "Rick", "Big Dave", "Peanut", "Eddie", "Noodle", "Clement"};
 
-	int n = rand() % 10 + 1;
+	int n = rand() % 10;
 	if (this->type == "")
 		this->setZombieType("Not actually a zombie, just really drunk");
 	return (this->newZombie(names[n]));

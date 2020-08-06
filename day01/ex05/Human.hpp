@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/02 13:15:02 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/05 16:01:18 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/06 13:46:54 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class Human {
 public:
 	Human();
     ~Human();
-    Brain     &getBrain();
+    const Brain      &getBrain(void) const;
     const Brain     *identify() const;
 
 private:
-   Brain     _brian;
+    const Brain     _brian;
 };
 
 #endif
