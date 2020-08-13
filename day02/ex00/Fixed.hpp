@@ -19,10 +19,10 @@ class Fixed
     public:
         Fixed();
         ~Fixed();
-        Fixed(const Fixed &copy);
-        Fixed &     operator=(const Fixed &rhs);
+        Fixed(const Fixed & copy);
+        Fixed &     operator=(const Fixed & rhs);
         int         getRawBits(void) const;
-        int         setRawBits(int const);
+        void        setRawBits(int const);
 
     private:
             int                 _fpval;
