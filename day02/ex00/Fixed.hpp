@@ -26,7 +26,7 @@ class Fixed
 
     private:
             int                 _fpval;
-            static const int    _fbits;
+            static const int    _fbits = 8;
 };
 
 #endif

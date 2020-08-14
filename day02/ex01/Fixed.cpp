@@ -13,7 +13,6 @@
 #include "Fixed.hpp"
 #include <cmath>
 
-const int      Fixed::_fbits = 8;
 
 Fixed::Fixed() {
     this->_fpval = 0;
