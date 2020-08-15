@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/15 09:34:25 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/15 13:18:30 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/15 13:54:16 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class FragTrap
         void            specialAttack(std::string const & target);
         void            ultraAttack(std::string const & target);
         void            uselessAttack(std::string const & target);
-        void            takeDamage(std::string const & target);
-        void            beRepaired(std::string const & target);
+        void            takeDamage(unsigned int amount);
+        void            beRepaired(unsigned int amount);
         void            vaulthunter_dot_exe(std::string const & target);
 
         std::string     getName(void);
@@ -42,6 +42,7 @@ class FragTrap
         unsigned int    getSpecial_dmg(void);
         unsigned int    getUltra_dmg(void);
         unsigned int    getUseless_dmg(void);
+        unsigned int    getVHDE_dmg(void);
         unsigned int    getArmor_dmg_red(void);
 
     private:
@@ -57,6 +58,7 @@ class FragTrap
         unsigned int    _ultra_dmg;
         unsigned int    _useless_dmg;
         unsigned int    _armor_dmg_red;
+        unsigned int    _vhde_dmg;
 };
 
 
