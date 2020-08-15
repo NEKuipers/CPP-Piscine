@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include <cstdlib>
 
 FragTrap::FragTrap() {
     std::cout << "FragTrap is here!" << std::endl;
