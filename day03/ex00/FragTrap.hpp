@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/15 09:34:25 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/15 09:34:29 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/15 13:18:30 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,29 @@ class FragTrap
         FragTrap();
         ~FragTrap();
         FragTrap(std::string name);
-        FragTrap &  operator=(FragTrap const & rhs);
-        void        rangedAttack(std::string const & target);
-        void        meleeAttack(std::string const & target);
-        void        specialAttack(std::string const & target);
-        void        ultraAttack(std::string const & target);
-        void        uselessAttack(std::string const & target);
-        void        takeDamage(std::string const & target);
-        void        beRepaired(std::string const & target);
-        void        vaulthunter_dot_exe(std::string const & target);
+        FragTrap(const FragTrap & copy);
+        FragTrap &      operator=(FragTrap const & rhs);
+        void            rangedAttack(std::string const & target);
+        void            meleeAttack(std::string const & target);
+        void            specialAttack(std::string const & target);
+        void            ultraAttack(std::string const & target);
+        void            uselessAttack(std::string const & target);
+        void            takeDamage(std::string const & target);
+        void            beRepaired(std::string const & target);
+        void            vaulthunter_dot_exe(std::string const & target);
+
+        std::string     getName(void);
+        unsigned int    getHp(void);
+        unsigned int    getMaxhp(void);
+        unsigned int    getEp(void);
+        unsigned int    getMaxep(void);
+        unsigned int    getLv(void);
+        unsigned int    getMelee_dmg(void);
+        unsigned int    getRanged_dmg(void);
+        unsigned int    getSpecial_dmg(void);
+        unsigned int    getUltra_dmg(void);
+        unsigned int    getUseless_dmg(void);
+        unsigned int    getArmor_dmg_red(void);
 
     private:
         std::string     _name;
@@ -39,8 +53,10 @@ class FragTrap
         unsigned int    _lv;
         unsigned int    _melee_dmg;
         unsigned int    _ranged_dmg;
+        unsigned int    _special_dmg;
+        unsigned int    _ultra_dmg;
+        unsigned int    _useless_dmg;
         unsigned int    _armor_dmg_red;
-
 };
 
 
