@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   FragTrap.cpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2020/08/15 09:34:35 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/15 09:35:35 by nkuipers      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
@@ -22,7 +33,8 @@ void        FragTrap::rangedAttack(std::string const & target) {
 }
 
 void        FragTrap::meleeAttack(std::string const & target) {
-
+    std::cout << "FR4G-TP " << this->_name << " attacks " << target
+        << " with a melee attack, causing " << _melee_dmg << " points of damage!" << std::endl;
 }
 
 void        FragTrap::specialAttack(std::string const & target) {
@@ -37,7 +49,7 @@ void        FragTrap::uselessAttack(std::string const & target) {
 
 }
 
-void        FragTrap::takeDamae(std::string const & target) {
+void        FragTrap::takeDamage(std::string const & target) {
 
 }
 
