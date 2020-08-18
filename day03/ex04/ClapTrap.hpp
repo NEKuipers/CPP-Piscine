@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   ClapTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
@@ -10,26 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 # include <iostream>
 
-class ScavTrap
+class ClapTrap
 {
     public:
-        ScavTrap();
-        ~ScavTrap();
-        ScavTrap(std::string name);
-        ScavTrap(const ScavTrap & copy);
-        ScavTrap &      operator=(ScavTrap const & rhs);
+        ClapTrap();
+        ~ClapTrap();
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap & copy);
+        ClapTrap &      operator=(ClapTrap const & rhs);
         void            rangedAttack(std::string const & target);
         void            meleeAttack(std::string const & target);
+        void            specialAttack(std::string const & target);
+        void            ultraAttack(std::string const & target);
+        void            uselessAttack(std::string const & target);
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
-        void            challengeNewcomer(std::string const & target);
 
         std::string     getName(void);
-        std::string     getChallenge(void);
         unsigned int    getHp(void);
         unsigned int    getMaxhp(void);
         unsigned int    getEp(void);
@@ -39,7 +40,7 @@ class ScavTrap
         unsigned int    getRanged_dmg(void);
         unsigned int    getArmor_dmg_red(void);
 
-    private:
+    protected:
         std::string     _name;
         unsigned int    _hp;
         unsigned int    _maxhp;
@@ -49,7 +50,6 @@ class ScavTrap
         unsigned int    _melee_dmg;
         unsigned int    _ranged_dmg;
         unsigned int    _armor_dmg_red;
-        std::string     _challenge;
 };
 
 #endif

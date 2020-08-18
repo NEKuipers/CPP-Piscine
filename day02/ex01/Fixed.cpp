@@ -43,8 +43,7 @@ Fixed::Fixed(const float val) {
 }
 
 Fixed   &Fixed::operator=(const Fixed & rhs) {
-    if (this != &rhs)
-        this->_fpval = rhs.getRawBits();
+    this->_fpval = rhs.getRawBits();
     std::cout << "Assignation operator called." << std::endl;
     return (*this);
 }
