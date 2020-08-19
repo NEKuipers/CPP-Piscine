@@ -18,7 +18,7 @@
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
 
-class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
+class SuperTrap : public NinjaTrap, public ScavTrap
 {
     public:
         SuperTrap();

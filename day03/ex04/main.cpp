@@ -34,7 +34,7 @@ int     main(void)
     carl.takeDamage(shawn.getName());
 
     carl.rangedAttack(shawn.getName());
-    shawn.takeDamae(carl.getName());
+    shawn.takeDamage(carl.getName());
 
     return (0);
 }
