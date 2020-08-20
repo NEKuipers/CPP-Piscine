@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 10:43:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 11:29:00 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/20 12:55:31 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ class Peon : public Victim
     private:
         std::string _name;
 };
+
+
 
 #endif

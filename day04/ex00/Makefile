@@ -6,7 +6,7 @@
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/20 10:39:19 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/08/20 10:39:39 by nkuipers      ########   odam.nl          #
+#    Updated: 2020/08/20 12:43:20 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME =  Sorcerer
 FILES = main.cpp Sorcerer.cpp Peon.cpp Victim.cpp
 CXX = clang++
-FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98 -g
 
 #colors
 GREEN	= \x1b[32;01m
