@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/15 09:34:25 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/15 13:54:16 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/20 09:54:01 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
 
-class SuperTrap : public NinjaTrap, public ScavTrap
+class SuperTrap : public NinjaTrap, public FragTrap
 {
-    public:
-        SuperTrap();
-        ~SuperTrap();
-        SuperTrap(std::string name);
-        SuperTrap(const SuperTrap & copy);
-        SuperTrap &      operator=(SuperTrap const & rhs);
-        void            rangedAttack(std::string const & target);
-        void            meleeAttack(std::string const & target);
-
+public:
+	SuperTrap(void);
+	SuperTrap(std::string name);
+	~SuperTrap();
+    SuperTrap(const SuperTrap & copy);
+	SuperTrap &operator= (const SuperTrap &rhs);
+	void          meleeAttack(std::string const &target);
+    void          rangedAttack(std::string const &target);
 };
 
 #endif

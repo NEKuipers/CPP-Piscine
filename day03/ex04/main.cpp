@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/15 09:34:39 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/15 13:58:03 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/20 09:54:39 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int     main(void)
     shawn.ninjaShoebox(freddy);
 
     shawn.meleeAttack(carl.getName());
-    carl.takeDamage(shawn.getName());
+    carl.takeDamage(shawn.getMelee_dmg());
 
     carl.rangedAttack(shawn.getName());
-    shawn.takeDamage(carl.getName());
+    shawn.takeDamage(carl.getRanged_dmg());
 
     return (0);
 }
