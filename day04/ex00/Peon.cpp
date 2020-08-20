@@ -6,13 +6,18 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 11:20:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 11:24:45 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/20 11:52:37 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
 #include "Victim.hpp"
 #include <iostream>
+
+Peon::Peon(std::string name) {
+    this->_name = name;
+    std::cout << "Zog zog." << std::endl;
+}
 
 Peon::Peon() {
     this->_name = "Fred";
@@ -21,11 +26,6 @@ Peon::Peon() {
 
 Peon::~Peon() {
     std::cout << "Bleuark..." << std::endl;
-}
-
-Peon::Peon(std::string name) {
-    this->_name = name;
-    std::cout << "Zog zog." << std::endl;
 }
 
 Peon::Peon(const Peon & copy) {
