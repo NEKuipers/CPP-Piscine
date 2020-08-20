@@ -6,13 +6,14 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 10:43:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 11:20:31 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/20 11:29:00 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PEON_HPP
 # define PEON_HPP
 # include <iostream>
+# include "Victim.hpp"
 
 class Peon : public Victim
 {
