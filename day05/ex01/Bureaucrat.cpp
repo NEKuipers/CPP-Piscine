@@ -6,16 +6,14 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 13:42:36 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 18:52:36 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/21 18:48:08 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-Bureaucrat::Bureaucrat() {
-    this->_name = "";
-    this->_grade = 1;
-}
+Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::~Bureaucrat() {}
 
@@ -28,7 +26,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat & copy) {
     *this = copy;
 }
 
-Bureaucrat              &Bureaucrat::operator=(const Bureaucrat & rhs) {
+Bureaucrat              &Bureaucrat::operator=(const Bureaucrat & rhs) const {
     this->_name = rhs._name;
     this->_grade = rhs._grade;
     return (*this);
@@ -56,7 +54,7 @@ void                     Bureaucrat::demote() {
         throw Bureaucrat::GradeTooLowException();
 }
 
-void                    Bureaucrat::setName(std::string name) {
+void                    Bureaucrat::setName(std::string name) const {
     this->_name = name;
 }
 
@@ -105,4 +103,18 @@ const char       *Bureaucrat::GradeTooLowException::what() const throw() {
 std::ostream    &operator<<(std::ostream &os, const Bureaucrat &rhs) {
     os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
     return (os);
+}
+
+void                Bureaucrat::signForm(const Form & form) {
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->_name << " signs " << form.getName() << std::endl;
+
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->_name " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+    
 }
