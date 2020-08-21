@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "SuperTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
 #include <cstdlib>
 #include <ctime>
 
