@@ -5,13 +5,14 @@
 #                                                      +:+                     #
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/08/20 14:32:45 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/08/21 09:46:41 by nkuipers      ########   odam.nl          #
+#    Created: 2020/08/21 11:21:48 by nkuipers      #+#    #+#                  #
+#    Updated: 2020/08/21 12:25:46 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Warhammer
-FILES = Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp main.cpp
+
+NAME = Bocal_Fantasy
+FILES = AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp main.cpp
 CXX = clang++
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 

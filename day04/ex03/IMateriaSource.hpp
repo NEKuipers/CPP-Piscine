@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ISquad.hpp                                         :+:    :+:            */
+/*   IMateriaSource.hpp                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/20 14:34:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 10:16:39 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/21 12:24:10 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/21 12:24:55 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
-# include <iostream>
-# include "ISpaceMarine.hpp"
+#ifndef IMATERIAL_SOURCE_HPP
+# define IMATERIAL_SOURCE_HPP
 
-class ISquad
+# include "AMateria.hpp"
+
+class IMateriaSource
 {
     public:
-        virtual ~ISquad() {}
-        virtual int             getCount() const = 0;
-        virtual ISpaceMarine    *getUnit(int n) const = 0;
-        virtual int             push(ISpaceMarine *marine) = 0;
+        virtual             ~IMateriaSource() {}
+        virtual void        learnMateria(AMateria*) = 0;
+        virtual AMateria    *createMateria(std::string const & type) = 0;
 };
 
 #endif
