@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 13:42:38 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 18:49:52 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/23 12:07:33 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ class Bureaucrat
         int                 getGrade() const;
         void                promote();
         void                demote();
-        void                setName(std::string name);
         void                setGrade(int grade);
     private:
         const std::string   _name;

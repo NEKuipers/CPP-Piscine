@@ -6,22 +6,24 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 13:42:36 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 18:52:36 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/23 12:07:08 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
-    this->_name = "";
-    this->_grade = 1;
+Bureaucrat::Bureaucrat()  {
 }
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(std::string name, int grade) {
-    this->_name = name;
-    this->_grade = grade;
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    else
+        this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & copy) {
@@ -29,7 +31,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat & copy) {
 }
 
 Bureaucrat              &Bureaucrat::operator=(const Bureaucrat & rhs) {
-    this->_name = rhs._name;
     this->_grade = rhs._grade;
     return (*this);
 }
@@ -56,9 +57,6 @@ void                     Bureaucrat::demote() {
         throw Bureaucrat::GradeTooLowException();
 }
 
-void                    Bureaucrat::setName(std::string name) {
-    this->_name = name;
-}
 
 void                    Bureaucrat::setGrade(int grade) {
     if (grade < 1)
