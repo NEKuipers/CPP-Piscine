@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 14:22:41 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 17:40:50 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 17:46:14 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int     main(void)
 {
     Bureaucrat Barry("Barry", 2);
-    Form       C42(false, 5, 2, "C42");
-    Form       D41(false, 2, 2, "D41");
+    Form       C42(5, 2, "C42");
+    Form       D41(2, 2, "D41");
     std::cout << Barry;
     std::cout << std::endl;
     std::cout << C42;

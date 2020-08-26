@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 16:43:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 17:15:08 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 17:45:55 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Form
         };
         Form();
         ~Form();
-        Form(bool sign, int sign_grade, int execute_grade, std::string name);
+        Form(int sign_grade, int execute_grade, std::string name);
         Form(const Form & copy);
         Form          &operator=(const Form & rhs);
         std::string         getName() const;

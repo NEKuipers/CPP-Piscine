@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 16:43:47 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 17:43:21 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 17:45:51 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Form::Form(const Form &src):_sign(src._sign), _sign_grade(src._sign_grade), _exe
 }
 
 
-Form::Form(bool sign, int sign_grade, int execute_grade, std::string name) :
-    _sign(sign),
+Form::Form(int sign_grade, int execute_grade, std::string name) :
+    _sign(false),
     _sign_grade(sign_grade),
     _execute_grade(execute_grade),
     _name(name)
