@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 11:31:05 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 12:59:25 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 14:40:16 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class AMateria
         virtual void        use(ICharacter & target) = 0;
         unsigned int        getXP() const;
         const std::string   &getType() const;
+        void                XPinc();
     protected:
         unsigned int        _xp;
         std::string         _type;

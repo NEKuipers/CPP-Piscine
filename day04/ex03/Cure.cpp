@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 11:47:31 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 13:26:41 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 14:42:02 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ AMateria    *Cure::clone() const {
 
 void        Cure::use(ICharacter & target) {
     std::cout << "* heals "<< target.getName() << "'s wounds *" << std::endl;
-    AMateria::use(target);
+    AMateria::XPinc();
 }

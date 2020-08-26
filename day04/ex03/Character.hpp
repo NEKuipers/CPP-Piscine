@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 11:50:48 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 13:33:48 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 14:51:10 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Character : public ICharacter
         virtual void                use(int idx, ICharacter & target);
         virtual const std::string   &getName() const;
         std::string                 getInventory(int n) const;
+        int                         getXP(int n) const;
     private:
         std::string                 _name;
         AMateria                    *_inventory[4];

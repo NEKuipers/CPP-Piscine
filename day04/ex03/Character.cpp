@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 11:50:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 13:35:58 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 15:03:29 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,14 @@ Character::Character() {}
 
 Character::~Character() {}
 
-Character::Character(const Character & copy) { 
-    *this = copy;
+Character::Character(const Character & copy)
+{
+	this->_name = copy._name;
+	this->_inventory[0] = copy._inventory[0];
+	this->_inventory[1] = copy._inventory[0];
+	this->_inventory[2] = copy._inventory[0];
+	this->_inventory[3] = copy._inventory[0];
+	return;
 }
 
 Character               &Character::operator=(const Character & rhs) {
@@ -32,8 +38,11 @@ Character               &Character::operator=(const Character & rhs) {
     return (*this);
 }
 
-Character::Character(const std::string & name) {
-    this->_name = name;
+Character::Character(const std::string & name) : _name(name) {
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
 }
 
 const std::string       &Character::getName() const {
@@ -45,6 +54,13 @@ std::string             Character::getInventory(int n) const {
         return (this->_inventory[n]->getType());
     else
         return ("");
+}
+
+int                     Character::getXP(int n) const {
+    if (this->_inventory[n] != NULL)
+        return (this->_inventory[n]->getXP());
+    else
+        return (0); 
 }
 
 void                    Character::equip(AMateria *m) {
