@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:47:37 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 18:52:48 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 20:10:29 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void                    RobotomyRequestForm::execute(const Bureaucrat &executor)
     else
     {
         std::cout << "haha robotomizer goes BRRRRRRRRRRRRR" << std::endl;
-        std::cout << getTarget() << "robotomization was a failure." << std::endl;
+        std::cout << getTarget() << " robotomization was a failure." << std::endl;
     }
 }

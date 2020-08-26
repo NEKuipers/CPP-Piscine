@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 18:52:57 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:27:19 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 20:09:49 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,5 @@ void                        ShrubberyCreationForm::execute(const Bureaucrat &exe
     targetfile << "      ||           " << std::endl;
     targetfile << "      ||           " << std::endl;
     targetfile.close() ;
+    std::cout << "Shrubbery has been planted." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 13:42:38 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:46:27 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 19:59:23 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class Bureaucrat
         void                demote();
         void                setGrade(int grade);
         void                signForm(Form & form);
-        void                executeForm(Form const & form);
+        void                executeForm(Form const & form); 
     private:
         const std::string   _name;
         int                 _grade;
