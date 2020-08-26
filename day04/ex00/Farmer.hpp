@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 13:15:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:40:42 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 16:31:08 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Farmer : public Victim
 {
     public:
-        Farmer();
         virtual ~Farmer();
         Farmer(std::string name);
         Farmer(const Farmer & copy);
         Farmer &          operator=(Farmer const &rhs);
         void            getPolymorphed() const;
+        std::string     getName() const;
     private:
-        std::string _name;
+        Farmer();
 };
 
 #endif

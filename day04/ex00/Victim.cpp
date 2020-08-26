@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 11:10:15 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 12:56:15 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 16:25:54 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ Victim::~Victim(void)
     std::cout << "Victim " << this->_name << " just died for no apparent reason!" << std::endl;
 }
 
-Victim::Victim(std::string name) {
-    this->_name = name;
+Victim::Victim(std::string name): _name(name) {
     std::cout << "Some random victim called " << this->_name << " just appeared!" << std::endl;
 }
 

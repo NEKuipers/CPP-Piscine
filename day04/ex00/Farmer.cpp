@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 13:15:46 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:43:54 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 16:21:20 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 #include "Victim.hpp"
 #include <iostream>
 
-Farmer::Farmer() {
-    std::cout << "I'm just a simple farmer." << std::endl; 
-}
-
-Farmer::Farmer(std::string name) {
-    this->_name = name;
+Farmer::Farmer(std::string name): Victim(name) {
     std::cout << "I'm just a simple farmer." << std::endl;
 }
 
@@ -27,8 +22,13 @@ Farmer::~Farmer() {
     std::cout << "Bye Bye!" << std::endl;
 }
 
-Farmer::Farmer(const Farmer & copy) {
+Farmer::Farmer(const Farmer & copy): Victim(copy) {
     *this = copy;
+}
+
+std::string		Farmer::getName(void) const
+{
+	return (this->_name);
 }
 
 Farmer &  Farmer::operator=(Farmer const & rhs) {
@@ -37,5 +37,5 @@ Farmer &  Farmer::operator=(Farmer const & rhs) {
 }
 
 void    Farmer::getPolymorphed() const {
-    std::cout << this->_name << " has been turned into a cow!" << std::endl;
+    std::cout << this->getName() << " has been turned into a cow!" << std::endl;
 }
