@@ -6,28 +6,31 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 13:42:36 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 18:48:08 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 13:06:09 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat() {}
+Bureaucrat::Bureaucrat()  {}
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(std::string name, int grade) {
-    this->_name = name;
-    this->_grade = grade;
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    else
+        this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & copy) {
     *this = copy;
 }
 
-Bureaucrat              &Bureaucrat::operator=(const Bureaucrat & rhs) const {
-    this->_name = rhs._name;
+Bureaucrat              &Bureaucrat::operator=(const Bureaucrat & rhs) {
     this->_grade = rhs._grade;
     return (*this);
 }
@@ -54,9 +57,6 @@ void                     Bureaucrat::demote() {
         throw Bureaucrat::GradeTooLowException();
 }
 
-void                    Bureaucrat::setName(std::string name) const {
-    this->_name = name;
-}
 
 void                    Bureaucrat::setGrade(int grade) {
     if (grade < 1)

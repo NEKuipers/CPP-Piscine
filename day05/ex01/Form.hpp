@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 16:43:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 18:49:18 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 13:03:02 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ class Form
         void                setExecuteGrade(int execute_grade);
         void                beSigned(const Bureaucrat & bureaucrat);
     private:
-        const std::string   _name;
+        bool                _sign;
         const int           _sign_grade;
         const int           _execute_grade;
-        bool                _sign;
+        const std::string   _name;
 };
 
 std::ostream            &operator<<(std::ostream &os, const Form &rhs);

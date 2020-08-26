@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 13:42:38 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 18:48:14 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 12:56:15 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,11 @@ class Bureaucrat
         ~Bureaucrat();
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat & copy);
-        Bureaucrat          &operator=(const Bureaucrat & rhs) const;
+        Bureaucrat          &operator=(const Bureaucrat & rhs);
         std::string         getName() const;
         int                 getGrade() const;
         void                promote();
         void                demote();
-        void                setName(std::string name) const;
         void                setGrade(int grade);
         void                signForm(const Form & form);
     private:
