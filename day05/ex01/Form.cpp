@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 16:43:47 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:04:52 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 15:39:06 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ const char*Form::GradeTooLowException::what() const throw() {
 }
 
 
-void  Form::beSigned(const Bureaucrat & bureaucrat) {
+void  Form::beSigned(Bureaucrat & bureaucrat) {
     if (bureaucrat.getGrade() > this->_sign_grade)
         throw Form::GradeTooLowException();
     else

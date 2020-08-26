@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 16:43:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:03:02 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 15:39:01 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class Form
         void                setName(std::string name);
         void                setSignGrade(int sign_grade);
         void                setExecuteGrade(int execute_grade);
-        void                beSigned(const Bureaucrat & bureaucrat);
+        void                beSigned(Bureaucrat & bureaucrat);
     private:
         bool                _sign;
         const int           _sign_grade;
