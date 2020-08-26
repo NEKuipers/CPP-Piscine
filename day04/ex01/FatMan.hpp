@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   FatMan.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/20 10:43:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:40:36 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/26 14:09:25 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/26 14:10:57 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-# include <iostream>
-# include "Victim.hpp"
 
-class Peon : public Victim
+#ifndef FATMAN_HPP
+# define FATMAN_HPP
+# include <iostream>
+# include "AWeapon.hpp"
+
+class FatMan : public AWeapon
 {
     public:
-        Peon();
-        virtual ~Peon();
-        Peon(std::string name);
-        Peon(const Peon & copy);
-        Peon &          operator=(Peon const &rhs);
-        void            getPolymorphed() const;
-    private:
-        std::string _name;
+        FatMan();
+        virtual ~FatMan();
+        FatMan(const FatMan & copy);
+        FatMan   &operator=(const FatMan &rhs);
+        virtual void  attack() const;
 };
 
 #endif

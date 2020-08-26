@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 10:41:34 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 11:26:24 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 13:34:26 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ std::string Sorcerer::getTitle() const {
     return (this->_title);
 }
 
-void    Sorcerer::polymorph(const Victim &victim) const {
+void    Sorcerer::polymorph(const Victim & victim) const {
     return (victim.getPolymorphed());
 }
 

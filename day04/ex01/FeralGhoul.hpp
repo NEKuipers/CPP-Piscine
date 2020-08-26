@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   FeralGhoul.hpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/20 10:43:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:40:36 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/26 14:12:12 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/26 14:12:31 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef FERALGHOUL_HPP
+# define FERALGHOUL_HPP
+# include "Enemy.hpp"
 # include <iostream>
-# include "Victim.hpp"
 
-class Peon : public Victim
+class FeralGhoul : public Enemy
 {
     public:
-        Peon();
-        virtual ~Peon();
-        Peon(std::string name);
-        Peon(const Peon & copy);
-        Peon &          operator=(Peon const &rhs);
-        void            getPolymorphed() const;
-    private:
-        std::string _name;
+        FeralGhoul();
+        virtual ~FeralGhoul();
+        FeralGhoul(const FeralGhoul & copy);
+        FeralGhoul     &operator=(const FeralGhoul &rhs);
 };
 
 #endif

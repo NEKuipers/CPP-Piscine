@@ -6,14 +6,15 @@
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/20 10:39:19 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/08/20 14:29:21 by nkuipers      ########   odam.nl          #
+#    Updated: 2020/08/26 14:10:48 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME =  Fallout
 FILES = main.cpp AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp Enemy.cpp \
-		Supermutant.cpp RadScorpion.cpp Character.cpp
+		Supermutant.cpp RadScorpion.cpp Character.cpp FatMan.cpp \
+		FeralGhoul.cpp
 CXX = clang++
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 

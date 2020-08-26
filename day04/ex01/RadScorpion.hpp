@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 13:54:28 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 13:58:58 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 13:53:14 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class RadScorpion : public Enemy
 {
     public:
         RadScorpion();
-        ~RadScorpion();
+        virtual ~RadScorpion();
         RadScorpion(const RadScorpion & copy);
         RadScorpion     &operator=(const RadScorpion &rhs);
 };

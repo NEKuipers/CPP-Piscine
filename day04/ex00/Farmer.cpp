@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.cpp                                           :+:    :+:            */
+/*   Farmer.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/20 11:20:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:44:02 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/26 13:15:46 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/26 13:43:54 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Farmer.hpp"
 #include "Victim.hpp"
 #include <iostream>
 
-Peon::Peon() {
-    std::cout << "Zog zog." << std::endl; 
+Farmer::Farmer() {
+    std::cout << "I'm just a simple farmer." << std::endl; 
 }
 
-Peon::Peon(std::string name) {
+Farmer::Farmer(std::string name) {
     this->_name = name;
-    std::cout << "Zog zog." << std::endl;
+    std::cout << "I'm just a simple farmer." << std::endl;
 }
 
-Peon::~Peon() {
-    std::cout << "Bleuark..." << std::endl;
+Farmer::~Farmer() {
+    std::cout << "Bye Bye!" << std::endl;
 }
 
-Peon::Peon(const Peon & copy) {
+Farmer::Farmer(const Farmer & copy) {
     *this = copy;
 }
 
-Peon &  Peon::operator=(Peon const & rhs) {
+Farmer &  Farmer::operator=(Farmer const & rhs) {
     this->_name = rhs._name;
     return (*this);
 }
 
-void    Peon::getPolymorphed() const {
-    std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
+void    Farmer::getPolymorphed() const {
+    std::cout << this->_name << " has been turned into a cow!" << std::endl;
 }

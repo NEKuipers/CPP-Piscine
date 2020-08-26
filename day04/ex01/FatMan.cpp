@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   FatMan.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/20 10:43:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 13:40:36 by nkuipers      ########   odam.nl         */
+/*   Created: 2020/08/26 14:09:24 by nkuipers      #+#    #+#                 */
+/*   Updated: 2020/08/26 14:10:03 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-# include <iostream>
-# include "Victim.hpp"
+#include "FatMan.hpp"
 
-class Peon : public Victim
-{
-    public:
-        Peon();
-        virtual ~Peon();
-        Peon(std::string name);
-        Peon(const Peon & copy);
-        Peon &          operator=(Peon const &rhs);
-        void            getPolymorphed() const;
-    private:
-        std::string _name;
-};
+FatMan::FatMan() : AWeapon("Fat Man", 15, 100) {}
 
-#endif
+FatMan::~FatMan() {}
+
+FatMan::FatMan(const FatMan &copy){
+    *this = copy;
+}
+
+FatMan   &FatMan::operator=(const FatMan &rhs) {
+    this->_apcost = rhs._apcost;
+    this->_damage = rhs._damage;
+    this->_name = rhs._name;
+    return (*this);
+}
+
+void  FatMan::attack() const {
+    std::cout << "* KABOOOOOOOOM *" << std::endl;
+}

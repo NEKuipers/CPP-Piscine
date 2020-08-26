@@ -6,14 +6,14 @@
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/20 10:39:19 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/08/20 14:29:26 by nkuipers      ########   odam.nl          #
+#    Updated: 2020/08/26 13:26:12 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 NAME =  Sorcerer
-FILES = main.cpp Sorcerer.cpp Peon.cpp Victim.cpp
+FILES = main.cpp Sorcerer.cpp Peon.cpp Victim.cpp Farmer.cpp
 CXX = clang++
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 10:42:00 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/20 11:44:20 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 13:11:14 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Victim;
 class Sorcerer
 {
     public:
-        Sorcerer();
         ~Sorcerer();
         Sorcerer(const Sorcerer & copy);
         Sorcerer(std::string name, std::string title);
@@ -35,6 +34,7 @@ class Sorcerer
         std::string  getTitle() const;
 
     private:
+        Sorcerer();
         std::string  _name;
         std::string  _title;
 };
