@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 16:43:47 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 19:45:12 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 19:44:01 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,25 @@ Form::Form() :
     _sign(false),
     _sign_grade(1),
     _execute_grade(1),
-    _name("undefined")
+    _name("undefined"),
+    _target("undefined")
 {
     return ;
 }
 
-Form::Form(const Form &src):_sign(src._sign), _sign_grade(src._sign_grade), _execute_grade(src._execute_grade), _name(src._name)
+Form::Form(const Form &src):_sign(src._sign), _sign_grade(src._sign_grade), _execute_grade(src._execute_grade), _name(src._name), _target(src._target)
 {
     *this = src;
     return ;
 }
 
 
-Form::Form(int sign_grade, int execute_grade, std::string name) :
+Form::Form(int sign_grade, int execute_grade, std::string name, std::string target) :
     _sign(false),
     _sign_grade(sign_grade),
     _execute_grade(execute_grade),
-    _name(name)
+    _name(name),
+    _target(target)
 {
     if (this->_sign_grade < 1 || this->_execute_grade < 1)
         throw Form::GradeTooHighException();
@@ -83,6 +85,22 @@ const char          *Form::GradeTooLowException::what() const throw() {
     return ("Grade is too low.");
 }
 
+Form::NotSignedException::NotSignedException(void) {}
+
+Form::NotSignedException::NotSignedException(const NotSignedException& src) {
+    *this = src;
+}
+
+Form::NotSignedException::~NotSignedException(void) throw(){}
+
+Form::NotSignedException    &Form::NotSignedException::operator= (const NotSignedException &rhs) {
+    static_cast <void> (rhs);
+    return (*this);
+}
+
+const char*                 Form::NotSignedException::what(void) const throw() {
+    return ("Form has not yet been signed.");
+}
 
 void  Form::beSigned(Bureaucrat & bureaucrat) {
     if (bureaucrat.getGrade() > this->_sign_grade)
@@ -116,6 +134,27 @@ int                 Form::getExecuteGrade() const {
 
 std::string         Form::getName() const {
     return (this->_name);
+}
+
+std::string         Form::getTarget() const {
+    return (this->_target);
+}
+
+
+void                Form::setTarget(std::string target) {
+    this->_target = target;
+}
+
+void                Form::execute(const Bureaucrat& executor) const
+{
+    if (executor.getGrade() > _execute_grade)
+    {
+        throw Form::GradeTooLowException();
+    }
+    else if (_sign == false) 
+    {
+        throw Form::NotSignedException();
+    }
 }
 
 std::ostream        &operator<< (std::ostream &out, const Form &rhs) {
