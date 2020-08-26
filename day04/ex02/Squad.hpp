@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 14:34:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 11:18:41 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 14:23:51 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Squad : public ISquad
             ISpaceMarine        *soldier;
             struct s_unit       *next;
         }                       t_unit;
-
         int                     _count;
         t_unit                  *_squad;
     public:

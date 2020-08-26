@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/20 14:34:08 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/21 11:19:11 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/26 14:26:14 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,24 @@
 #include "Squad.hpp"
 #include "ISpaceMarine.hpp"
 
-Squad::Squad() {}
+Squad::Squad() {
+    this->_count = 0;
+    this->_squad = NULL;
+}
 
-Squad::~Squad() {}
+Squad::~Squad() {
+    this->destroySquad();
+}
 
 Squad::Squad(const Squad & copy) {
-    *this = copy;
+    this->copySquad(copy);
+    this->_count = copy._count;
 }
 
 Squad           &Squad::operator=(const Squad & rhs) {
+    this->destroySquad();
+    this->copySquad(rhs);
     this->_count = rhs._count;
-    this->_squad = rhs._squad;
     return (*this);
 }
 
