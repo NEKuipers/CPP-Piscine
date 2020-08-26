@@ -6,14 +6,14 @@
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/21 14:22:14 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/08/21 18:15:14 by nkuipers      ########   odam.nl          #
+#    Updated: 2020/08/26 17:27:17 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrats_and_Forms
 FILES = Bureaucrat.cpp main.cpp Form.cpp
 CXX = clang++
-FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98 -g
 
 #colors
 GREEN	= \x1b[32;01m
