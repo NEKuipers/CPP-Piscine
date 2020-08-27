@@ -5,14 +5,14 @@
 #                                                      +:+                     #
 #    By: nkuipers <nkuipers@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/08/26 17:52:39 by nkuipers      #+#    #+#                  #
-#    Updated: 2020/08/27 12:46:24 by nkuipers      ########   odam.nl          #
+#    Created: 2020/08/27 11:29:38 by nkuipers      #+#    #+#                  #
+#    Updated: 2020/08/27 11:29:51 by nkuipers      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = More_Forms
+NAME = Interns
 FILES = Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+		RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 CXX = clang++
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
@@ -31,7 +31,6 @@ $(NAME):
 clean:
 	@echo "$(WHITE) Cleaning..."
 	@rm -f $(NAME)
-	@rm -f *_shrubbery
 
 fclean: clean
 
