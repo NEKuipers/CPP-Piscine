@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 14:23:14 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/27 14:57:07 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/28 14:13:08 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,22 @@ class Array {
         ~Array() {
             delete[] _array; return;
         }
-        Array&			operator=(Array const & a) {
+        Array&			operator=(Array const & a) 
+        {
             _size = a.size();
             delete [] _array;
-            if (_size > 0) _array = new T[_size];
-            else _array = new T();
+            if (_size > 0) 
+                _array = new T[_size];
+            else 
+                _array = new T();
             for(unsigned int i = 0; i < _size; i++)
                 _array[i] = a[i];
             return (*this);
         }
         T&				operator[](unsigned int index) {
-            if (index >= _size) throw Array::WrongIndex();
-            return _array[index];
+            if (index >= _size) 
+                throw Array::WrongIndex();
+            return (_array[index]);
         }
     private:
         unsigned int _size;

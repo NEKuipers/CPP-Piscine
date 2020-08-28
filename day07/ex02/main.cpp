@@ -6,55 +6,67 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 14:23:10 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/27 14:55:01 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/08/28 14:15:49 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Array.hpp"
 
-int main(void) {
-	Array <int> a(10);
-	std::cout << "Array of ints:	";
-	try {
-		for (int i = 0; i < 10; i++) {
-			a[i] = i + 1;
-			std::cout << a[i] << " ";
+int main(void) 
+{
+	Array <int> ints(5);
+	std::cout << "Int array: ";
+	try 
+	{
+		for (int i = 0; i < 5; i++) 
+		{
+			ints[i] = i;
+			std::cout << ints[i] << " ";
 		}
 		std::cout << std::endl;
-		std::cout	<< "Trying to display value in array that index 11:	"
-					<< a[11] << std::endl;
+		std::cout << "Attempt to access index 2:" << std::endl << ints[2] << std::endl;
+		std::cout << "Attempt to access index 6:" << std::endl << ints[6] << std::endl;
 	}
-	catch(std::exception & e) {
+	catch(std::exception & e) 
+	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 
-	Array <std::string> b(3);
-	try {
-		b[0] = "Hello";
-		b[1] = "World";
-		b[2] = "!";
-		std::cout << "Array of std::strings:				";
-		for(int i = 0; i < 3; i++)
-			std::cout << b[i] << " ";
+	Array <std::string> strings(4);
+	std::cout << "String array:";
+	try 
+	{
+		strings[0] = "nick";
+		strings[1] = "kuipers";
+		strings[2] = "codam";
+		strings[3] = "42";
 		std::cout << std::endl;
-		std::cout << "Trying to reach element with index 1:		" << b[1] << std::endl;
-		std::cout << "Element with index 4:				" << b[4] << std::endl;
+		for(int i = 0; i < 4; i++)
+			std::cout << strings[i] << " ";
+		std::cout << std::endl;
+		std::cout << "Attempt to access index 2:" << std::endl << strings[2] << std::endl;
+		std::cout << "Attempt to access index 6:" << std::endl << strings[6] << std::endl;
 	}
-	catch(std::exception & e) {
+	catch(std::exception & e) 
+	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 
-	Array<double> c(5);
-	try {
-		std::cout << "Array of floats:				";
-		for(int i = 0; i < 5; i++) {
-			c[i] = (i * 0.1 + 1) * 0.078;
-			std::cout << c[i] << " ";
+	Array<double> doubles(5);
+	try 
+	{
+		std::cout << "Array of doubles:" << std::endl;
+		for(int i = 0; i < 5; i++) 
+		{
+			doubles[i] = i * 0.5397;
+			std::cout << doubles[i] << " ";
 		}
 		std::cout << std::endl;
-		std::cout << "Element number 1:				" << c[1] << std::endl;
-		std::cout << "Element number 10:				" << c[10] << std::endl;
+		std::cout << "Attempt to access index 2:" << std::endl << doubles[2] << std::endl;
+		std::cout << "Attempt to access index 6:" << std::endl << doubles[6] << std::endl;
 	}
 	catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
