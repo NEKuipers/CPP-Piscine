@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 11:50:44 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/08/26 15:03:29 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/03 17:49:44 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Character::Character(const Character & copy)
 {
 	this->_name = copy._name;
 	this->_inventory[0] = copy._inventory[0];
-	this->_inventory[1] = copy._inventory[0];
-	this->_inventory[2] = copy._inventory[0];
-	this->_inventory[3] = copy._inventory[0];
+	this->_inventory[1] = copy._inventory[1];
+	this->_inventory[2] = copy._inventory[2];
+	this->_inventory[3] = copy._inventory[3];
 	return;
 }
 
