@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:46:45 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/04 16:04:48 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/04 16:33:24 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ int         main(void)
     void        *test = serialize();
     Data        *ds = deserialize(test);
     std::cout << ds->s1 << std::endl << ds->n << std::endl << ds->s2 << std::endl;
+    delete ds;
     return (0);
 }
