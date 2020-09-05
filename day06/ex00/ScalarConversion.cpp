@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 11:43:47 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/05 15:16:05 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/05 15:18:03 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int                 ScalarConversion::convint(double x) {
 }
 
 double              ScalarConversion::convdouble(double x) {
-    if (x > std::numeric_limits<double>::max() || x < std::numeric_limits<double>::min())
+    if (x > __DBL_MAX__ || x < __DBL_MIN__)
         throw (ScalarConversion::Impossible());
     return (static_cast<double>(x));
 }
 
 float              ScalarConversion::convfloat(double x) {
-    if (x > FLT_MAX || x < FLT_MIN)
+    if (x > __FLT_MAX__ || x < __FLT_MIN__)
         throw (ScalarConversion::Impossible());
     return (static_cast<float>(x));
 }
