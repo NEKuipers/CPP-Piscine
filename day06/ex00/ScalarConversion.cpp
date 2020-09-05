@@ -6,13 +6,14 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 11:43:47 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/04 15:31:54 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/05 15:16:05 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConversion.hpp"
 #include <cmath>
 #include <cfloat>
+#include <limits>
 
 ScalarConversion::ScalarConversion() {}
 
@@ -38,19 +39,20 @@ char                ScalarConversion::convchar(double x) {
 }
 
 int                 ScalarConversion::convint(double x) {
-    double max = 2147483647;
-    double min = -2147483648;
-
-    if (std::isnan(x) || std::isinf(x) || x > max || x < min)
+    if (std::isnan(x) || std::isinf(x) || x > INT32_MAX || x < INT32_MIN)
         throw (ScalarConversion::Impossible());
     return (static_cast<int>(x));
 }
 
 double              ScalarConversion::convdouble(double x) {
+    if (x > std::numeric_limits<double>::max() || x < std::numeric_limits<double>::min())
+        throw (ScalarConversion::Impossible());
     return (static_cast<double>(x));
 }
 
 float              ScalarConversion::convfloat(double x) {
+    if (x > FLT_MAX || x < FLT_MIN)
+        throw (ScalarConversion::Impossible());
     return (static_cast<float>(x));
 }
 
