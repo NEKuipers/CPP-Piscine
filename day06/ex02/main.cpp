@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 16:45:04 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/04 17:24:06 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/05 15:02:18 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,26 +48,18 @@ void        identify_from_pointer(Base *ptr)
 {
     A   *ptra = dynamic_cast<A*>(ptr);
     if (ptra)
-        std::cout << "Identified A from pointer." << std::endl;
+        std::cout << "Identified A." << std::endl;
     B   *ptrb = dynamic_cast<B*>(ptr);
     if (ptrb)
-        std::cout << "Identified B from pointer." << std::endl;
+        std::cout << "Identified B." << std::endl;
     C   *ptrc = dynamic_cast<C*>(ptr);
     if (ptrc)
-        std::cout << "Identified C from pointer." << std::endl;
+        std::cout << "Identified C." << std::endl;
 }
 
 void        identify_from_reference(Base &ptr)
 {
-    A   *refa = dynamic_cast<A*>(&ptr);
-    if (refa)
-        std::cout << "Identified A from reference." << std::endl;
-    B   *refb = dynamic_cast<B*>(&ptr);
-    if (refb)
-        std::cout << "Identified B from reference." << std::endl;
-    C   *refc = dynamic_cast<C*>(&ptr);
-    if (refc)
-        std::cout << "Identified C from reference." << std::endl;
+   identify_from_pointer(&ptr);
 }
 
 int         main(void)
