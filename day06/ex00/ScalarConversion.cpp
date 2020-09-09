@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 11:43:47 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/05 15:18:03 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/09 08:30:11 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char                ScalarConversion::convchar(double x) {
 }
 
 int                 ScalarConversion::convint(double x) {
-    if (std::isnan(x) || std::isinf(x) || x > INT32_MAX || x < INT32_MIN)
+    if (std::isnan(x) || std::isinf(x) || x > 2147483647 || x < -2147483648)
         throw (ScalarConversion::Impossible());
     return (static_cast<int>(x));
 }
