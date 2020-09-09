@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 22:30:59 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/09 09:02:56 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/09 09:53:31 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,15 @@ static int         find_point(char *str)
 int                 main(int ac, char **av) 
 {
     int                 p;
-    double              val;
+    long double         val;
     ScalarConversion    sc;
+
 
     if (ac == 2)
     {
+        std::istringstream ss(av[1]);
+        ss >> val;
         p = find_point(av[1]);
-        val = atof(av[1]);
         makechar(sc, val);
         makeint(sc, val);
         makefloat(sc, val, p);
