@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 22:30:59 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/04 15:30:04 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/09 09:02:56 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iomanip>
 #include <cstdlib>
 #include <cstring>
+#include <sstream>
+#include <string>
 #include "ScalarConversion.hpp"
 
 static void        makechar(ScalarConversion sc, double val)
