@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:46:45 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/04 16:33:24 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/11 12:18:33 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,34 +28,50 @@ struct      Data
 
 void        *serialize(void) 
 {
-    Data    *rv = new Data;
-    int     sign = rand();
-    char    an[63] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYX0123456789";
+    char    *randomdata = new char[20];
+    char    an[63] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYX";
 
-	srand(time(NULL));
-    if (sign % 2)
-        sign = -1;
-    else
-        sign = 1;
+    std::cout << "Generating random data..." << std::endl;
     for (int i = 0; i < 8; i++)
-        rv->s1 += an[rand() % 62];
-    rv->n = rand() * sign;
-    for (int i = 0; i < 8; i++)
-        rv->s2 += an[rand() % 62];    
-    return (rv);
+        randomdata[i] += an[rand() % 62];
+    for (int i = 8; i < 12; i++)
+        randomdata[i] = rand() % 256 - 128; 
+    for (int i = 12; i < 20; i++)
+        randomdata[i] += an[rand() % 62];
+
+    int     size = 0;
+    for (int i = 0; randomdata[i]; i++)
+        size = size + sizeof(randomdata[i]);
+    std::cout << size << " bytes of data have been allocated at memory address " << &randomdata << "." << std::endl;
+
+    return (reinterpret_cast<void*>(randomdata));
 }
 
 Data        *deserialize(void *raw)
 {
-    Data    *rv = reinterpret_cast<Data*>(raw);
-    return (rv);
+	Data 		*data = new Data;
+
+	data->n = 0;
+	char		*input = reinterpret_cast<char*>(raw);
+
+	for (int i = 0; i < 8; i++)
+		data->s1 = data->s1 + input[i];
+	for (int i = 8; i < 12; i++)
+		data->n = data->n * 10 + input[i] - '0';
+	for (int i = 12; i < 20; i++)
+		data->s2 = data->s2 + input[i];
+	return (data);
 }
 
 int         main(void)
 {
+    srand(time(NULL));
     void        *test = serialize();
+    std::cout << std::endl;
     Data        *ds = deserialize(test);
-    std::cout << ds->s1 << std::endl << ds->n << std::endl << ds->s2 << std::endl;
+    std::cout << "First alphanumeric character string : " << ds->s1 << std::endl;
+    std::cout << "Integer                             : " << ds->n << std::endl;
+    std::cout << "Second alphanumeric character string: " << ds->s2 << std::endl;
     delete ds;
     return (0);
 }
