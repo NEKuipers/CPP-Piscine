@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 22:30:59 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/09 09:53:31 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/11 11:32:45 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,7 @@ int                 main(int ac, char **av)
 
     if (ac == 2)
     {
-        std::istringstream ss(av[1]);
-        ss >> val;
+        val = atof(av[1]);
         p = find_point(av[1]);
         makechar(sc, val);
         makeint(sc, val);
