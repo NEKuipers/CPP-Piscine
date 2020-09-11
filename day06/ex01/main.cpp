@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:46:45 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/11 12:18:33 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/11 14:17:51 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,9 @@ void        *serialize(void)
 Data        *deserialize(void *raw)
 {
 	Data 		*data = new Data;
-
-	data->n = 0;
 	char		*input = reinterpret_cast<char*>(raw);
 
+	data->n = 0;
 	for (int i = 0; i < 8; i++)
 		data->s1 = data->s1 + input[i];
 	for (int i = 8; i < 12; i++)
