@@ -29,7 +29,7 @@ struct      Data
 void        *serialize(void) 
 {
     char    *randomdata = new char[20];
-    char    an[63] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYX";
+    char    an[63] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     std::cout << "Generating random data..." << std::endl;
     for (int i = 0; i < 8; i++)
