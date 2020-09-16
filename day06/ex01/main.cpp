@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 15:46:45 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/11 14:17:51 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/16 13:54:50 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,12 @@ void        *serialize(void)
     std::cout << "Generating random data..." << std::endl;
     for (int i = 0; i < 8; i++)
         randomdata[i] += an[rand() % 62];
-    for (int i = 8; i < 12; i++)
-        randomdata[i] = rand() % 256 - 128; 
+    *(reinterpret_cast<int *>(&randomdata[8])) = rand();
     for (int i = 12; i < 20; i++)
         randomdata[i] += an[rand() % 62];
 
     int     size = 0;
-    for (int i = 0; randomdata[i]; i++)
+    for (int i = 0; i < 20; i++)
         size = size + sizeof(randomdata[i]);
     std::cout << size << " bytes of data have been allocated at memory address " << &randomdata << "." << std::endl;
 
