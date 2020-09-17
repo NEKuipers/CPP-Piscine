@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 17:30:24 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/05 11:21:24 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/17 10:43:15 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <algorithm>
 
 template <typename T>
-void    easyfind(T &container, int n)
+void    easyFind(T &container, int n)
 {
     typename    T::const_iterator i;
 

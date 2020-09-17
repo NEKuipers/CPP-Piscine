@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 17:30:13 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/05 11:11:00 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/17 10:43:21 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void        searchforvalue(int x)
 
     try
     {
-        easyfind<std::list<int> > (list, x);
+        easyFind<std::list<int> > (list, x);
     }
     catch(std::string e)
     {
