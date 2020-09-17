@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 11:31:11 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/17 10:34:44 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/17 10:46:04 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,15 @@ int main(int ac, char **av)
         try
         {
             std::cout << "The longest span in this vector is " <<sp.longestSpan() << "." << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        std::cout << std::endl << "And finally, here's the addnumber error I'm supposed to have:" << std::endl;
+        try
+        {
+            sp.addNumber(42);
         }
         catch(const std::exception& e)
         {
