@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 11:24:27 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/11 16:00:26 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/17 10:26:58 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdexcept>
 # include <vector>
 # include <algorithm>
+# include <set>
 
 class Span
 {
@@ -44,6 +45,7 @@ class Span
         Span(const Span & copy);
         Span            &operator=(const Span & rhs);
         void            addNumber(int n);
+        void            addNumber(std::vector<int>::iterator b, std::vector<int>::iterator e);
         unsigned int    shortestSpan();
         unsigned int    longestSpan();
         unsigned int    getSize() const;

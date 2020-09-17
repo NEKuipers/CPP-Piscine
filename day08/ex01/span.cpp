@@ -6,7 +6,7 @@
 /*   By: nkuipers <nkuipers@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 11:24:19 by nkuipers      #+#    #+#                 */
-/*   Updated: 2020/09/11 19:27:47 by nkuipers      ########   odam.nl         */
+/*   Updated: 2020/09/17 10:31:12 by nkuipers      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,17 @@ void        Span::addNumber(int n) {
     if (_numbers.size() < _size)
     {
         _numbers.push_back(n);
-        _size += 1;
     }
+    else
+        throw Span::LimitError();
+}
+
+void        Span::addNumber(std::vector<int>::iterator b, std::vector<int>::iterator e) {
+    int amount = std::distance(b, e);
+
+    if (_numbers.size() + amount <= _size)
+        while (b != e)
+            addNumber(*b++);
     else
         throw Span::LimitError();
 }
@@ -90,7 +99,7 @@ Span::NoSpanError   &Span::NoSpanError::operator=(const NoSpanError & rhs) {
 
 // Exception NoSpanError throw message
 const char                          *Span::NoSpanError::what() const throw() {
-    return ("There are not enough numbers stored to find a span.");
+    return ("impossible to calculate :(\nThere are not enough numbers stored to find a span.");
 }
 
 
